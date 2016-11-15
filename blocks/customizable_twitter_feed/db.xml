@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.concrete5.org/doctrine-xml/0.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.concrete5.org/doctrine-xml/0.5 http://concrete5.github.io/doctrine-xml/doctrine-xml-0.5.xsd">
+    <table name="btCustomizableTwitterFeed">
+        <field name="bID" type="integer">
+            <unsigned/>
+            <key/>
+        </field>
+        <field name="userName" type="string" size="255" />
+        <field name="feedTitle" type="string" size="255" />
+        <field name="feedTitleColor" type="string" size="255" />
+        <field name="feedTitleTextSize" type="integer">
+            <unsigned/>
+        </field>
+        <field name="maxTweets" type="integer">
+            <unsigned/>
+        </field>
+        <field name="showUser" type="integer">
+            <unsigned/>
+        </field>
+        <field name="showTime" type="integer">
+            <unsigned/>
+        </field>
+        <field name="showInteraction" type="integer">
+            <unsigned/>
+        </field>
+        <field name="showRetweet" type="integer">
+            <unsigned/>
+        </field>
+        <field name="showImages" type="integer">
+            <unsigned/>
+        </field>
+        <field name="linksInNewWindow" type="integer">
+            <unsigned/>
+        </field>
+        <field name="maxWidth" type="integer">
+            <unsigned/>
+        </field>
+        <field name="feedPadding" type="integer">
+            <unsigned/>
+        </field>
+        <field name="feedBackgroundColor" type="string" size="255" />
+        <field name="feedTheme" type="string" size="255" />
+        <field name="tweetDivider" type="integer" />
+        <field name="tweetDividerColor" type="string" size="255" />
+        <field name="nameTextColor" type="string" size="255" />
+        <field name="nameTextSize" type="integer">
+            <unsigned/>
+        </field>
+        <field name="atNameTextSize" type="integer">
+            <unsigned/>
+        </field>
+        <field name="feedTextColor" type="string" size="255" />
+        <field name="feedTextSize" type="integer">
+            <unsigned/>
+        </field>
+        <field name="feedLinkColor" type="string" size="255" />
+        <field name="feedLinkHoverColor" type="string" size="255" />
+        <field name="timePostedColor" type="string" size="255" />
+        <field name="timePostedTextSize" type="integer">
+            <unsigned/>
+        </field>
+        <field name="interactTextSize" type="integer">
+            <unsigned/>
+        </field>
+    </table>
+</schema>
