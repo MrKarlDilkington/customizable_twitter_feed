@@ -2,7 +2,7 @@ Change Avatar Size:
 As of November 2015, Twitter has changed the HTML structure of user profile images.
 - there are now two sizes of profile image, data-src-1x (48px by 48px) and data-src-2x (73px by 73px)
 - this add-on uses the smaller profile image
-- in twitterFetcher_min.js, b.getAttribute("data-src-2x") has been changed to b.getAttribute("data-src-1x")
+- in twitterFetcher_min.js, getAttribute('data-src-2x') has been changed to getAttribute('data-src-1x')
 
 Before:
 function swapDataSrc(element) {
