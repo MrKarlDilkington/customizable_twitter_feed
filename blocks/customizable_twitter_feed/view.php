@@ -25,10 +25,10 @@ if ($feedTheme == 'dark') {
     max-width: <?php if ($maxWidth) { echo $maxWidth . 'px'; } else { echo '520px'; } ?>;
     word-wrap: break-word;
     <?php if ($feedBackgroundColor) { ?>
-    background: <?php echo $feedBackgroundColor; ?>;
+        background: <?php echo $feedBackgroundColor; ?>;
     <?php } ?>
     <?php if ($feedPadding) { ?>
-    padding: <?php echo $feedPadding . 'px' ?>;
+        padding: <?php echo $feedPadding . 'px' ?>;
     <?php } ?>
 }
 #twitter-feed-container-<?php if ($userName) { echo $userName; } ?> a {
@@ -37,16 +37,19 @@ if ($feedTheme == 'dark') {
 #twitter-feed-container-<?php if ($userName) { echo $userName; } ?> h2 {
     margin: 0 0 15px 0;
     <?php if ($feedTitle) { ?>
-    font-size: <?php if ($feedTitleTextSize) { echo $feedTitleTextSize . 'px'; } else { echo '18px'; } ?>;
+        font-size: <?php if ($feedTitleTextSize) { echo $feedTitleTextSize . 'px'; } else { echo '18px'; } ?>;
     <?php } ?>
     <?php if ($feedTitleColor) { ?>
-    color: <?php echo $feedTitleColor; ?>;
+        color: <?php echo $feedTitleColor; ?>;
     <?php } ?>
 }
+#twitter-feed-<?php if ($userName) { echo $userName; } ?> .user img,
 #twitter-feed-<?php if ($userName) { echo $userName; } ?> .user a img {
-    margin-right: 20px;
-    margin-bottom: 20px;
+    height: 48px;
     float: left;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    width: 48px;
 }
 #twitter-feed-<?php if ($userName) { echo $userName; } ?> .user div[title="Verified Account"] {
     display: inline;
@@ -57,35 +60,34 @@ if ($feedTheme == 'dark') {
 }
 #twitter-feed-<?php if ($userName) { echo $userName; } ?> .media {
     margin-top: 0;
-    <?php
-    if ($showUser && $tweetDivider) {
+    <?php if ($showUser) { ?>
+        padding-left: 67px;
+    <?php } ?>
+    <?php if ($showUser && $tweetDivider) {
         echo 'margin-bottom: 20px;';
     } else {
         echo 'margin-bottom: 30px;';
     }
     ?>
-    clear: both;
 }
 #twitter-feed-<?php if ($userName) { echo $userName; } ?> .user span:nth-child(2) {
     font-size: <?php if ($nameTextSize) { echo $nameTextSize . 'px'; } else { echo '16px'; } ?>;
     <?php if ($nameTextColor) { ?>
-    color: <?php echo $nameTextColor; ?>;
+        color: <?php echo $nameTextColor; ?>;
     <?php } ?>
     font-weight: bold;
 }
 #twitter-feed-<?php if ($userName) { echo $userName; } ?> .user span:nth-child(3) {
     font-size: <?php if ($atNameTextSize) { echo $atNameTextSize . 'px'; } else { echo '14px'; } ?>;
     <?php if ($feedLinkColor) { ?>
-    color: <?php echo $feedLinkColor; ?>;
+        color: <?php echo $feedLinkColor; ?>;
     <?php } ?>
     font-weight: bold;
 }
 #twitter-feed-<?php if ($userName) { echo $userName; } ?> .user span:nth-child(3):hover {
     <?php if ($feedLinkHoverColor) { ?>
-    color: <?php echo $feedLinkHoverColor; ?>;
+        color: <?php echo $feedLinkHoverColor; ?>;
     <?php } ?>
-    -webkit-transition: color 250ms;
-    -o-transition: color 250ms;
     transition: color 250ms;
     font-weight: bold;
 }
@@ -97,17 +99,16 @@ if ($feedTheme == 'dark') {
     list-style: none;
     margin-bottom: 20px;
     <?php if ($tweetDivider) { ?>
-    border-top: 1px solid <?php if ($tweetDividerColor) { echo $tweetDividerColor; } ?>;
+        border-top: 1px solid <?php if ($tweetDividerColor) { echo $tweetDividerColor; } ?>;
     <?php } ?>
     <?php if (($showUser && $tweetDivider) || $tweetDivider) { ?>
-    padding-top: 20px;
+        padding-top: 20px;
     <?php } ?>
-    clear: both;
 }
 #twitter-feed-<?php if ($userName) { echo $userName; } ?> li:first-child {
     border-top: none;
     <?php if (($showUser && $tweetDivider) || $tweetDivider) { ?>
-    padding-top: 10px;
+        padding-top: 10px;
     <?php } ?>
 }
 #twitter-feed-<?php if ($userName) { echo $userName; } ?> p {
@@ -117,25 +118,24 @@ if ($feedTheme == 'dark') {
 #twitter-feed-<?php if ($userName) { echo $userName; } ?> .tweet {
     <?php
     if ($showUser) {
-        echo 'margin-bottom: 8px;';
+        echo 'padding-left: 67px;';
     } else {
         echo 'margin-bottom: 0px;';
     }
     ?>
     font-size: <?php if ($feedTextSize) { echo $feedTextSize . 'px'; } else { echo '14px'; } ?>;
     line-height: 1.35;
+    margin-bottom: 8px;
 }
 #twitter-feed-container-<?php if ($userName) { echo $userName; } ?> #twitter-feed-<?php if ($userName) { echo $userName; } ?> a {
     <?php if ($feedLinkColor) { ?>
-    color: <?php echo $feedLinkColor; ?>;
+        color: <?php echo $feedLinkColor; ?>;
     <?php } ?>
 }
 #twitter-feed-container-<?php if ($userName) { echo $userName; } ?> #twitter-feed-<?php if ($userName) { echo $userName; } ?> a:hover {
     <?php if ($feedLinkHoverColor) { ?>
-    color: <?php echo $feedLinkHoverColor; ?>;
+        color: <?php echo $feedLinkHoverColor; ?>;
     <?php } ?>
-    -webkit-transition: color 250ms;
-    -o-transition: color 250ms;
     transition: color 250ms;
 }
 #twitter-feed-<?php if ($userName) { echo $userName; } ?> .tweet img {
@@ -144,38 +144,38 @@ if ($feedTheme == 'dark') {
 #twitter-feed-container-<?php if ($userName) { echo $userName; } ?> #twitter-feed-<?php if ($userName) { echo $userName; } ?> .timePosted a {
     font-size: <?php if ($timePostedTextSize) { echo $timePostedTextSize . 'px'; } else { echo '12px'; } ?>;
     <?php if ($timePostedColor) { ?>
-    color: <?php echo $timePostedColor; ?>;
+        color: <?php echo $timePostedColor; ?>;
     <?php } ?>
     margin-top: 10px;
     margin-bottom: 7px;
 }
 #twitter-feed-container-<?php if ($userName) { echo $userName; } ?> #twitter-feed-<?php if ($userName) { echo $userName; } ?> .timePosted {
     <?php if ($showUser) { ?>
-    clear: both;
+        padding-left: 67px;
     <?php } ?>
 }
 #twitter-feed-<?php if ($userName) { echo $userName; } ?> .interact {
     font-size: <?php if ($interactTextSize) { echo $interactTextSize . 'px'; } else { echo '12px'; } ?>;
     <?php if ($showTime == 'false') { ?>
-    margin-top: 10px;
+        margin-top: 10px;
     <?php } ?>
 }
 #twitter-feed-<?php if ($userName) { echo $userName; } ?> .interact a {
     margin-left: 10px;
 }
 #twitter-feed-<?php if ($userName) { echo $userName; } ?> .interact a:first-child {
-    margin-left: 0px;
+    margin-left: 0;
 }
 #twitter-feed-<?php if ($userName) { echo $userName; } ?> .interact {
-    <?php if ($showUser && !$showTime) { ?>
-    clear: both;
+    <?php if ($showUser) { ?>
+        padding-left: 67px;
     <?php } ?>
 }
 </style>
 
 <div id="twitter-feed-container-<?php if ($userName) { echo $userName; } ?>">
     <?php if ($feedTitle) { ?>
-    <h2><?php echo $feedTitle; ?></h2>
+        <h2><?php echo $feedTitle; ?></h2>
     <?php } ?>
     <div id="twitter-feed-<?php if ($userName) { echo $userName; } ?>"></div>
 </div>
@@ -187,34 +187,34 @@ if ($feedTheme == 'dark') {
         "domId":'twitter-feed-<?php if ($userName) { echo $userName; } ?>',
         "maxTweets":<?php if ($maxTweets) { echo $maxTweets; } ?>,
         <?php if ($showUser) { ?>
-        "showUser": true,
+            "showUser": true,
         <?php } else { ?>
-        "showUser": false,
+            "showUser": false,
         <?php } ?>
         <?php if ($showTime) { ?>
-        "showTime": true,
+            "showTime": true,
         <?php } else { ?>
-        "showTime": false,
+            "showTime": false,
         <?php } ?>
         <?php if ($showRetweet) { ?>
-        "showRetweet": true,
+            "showRetweet": true,
         <?php } else { ?>
-        "showRetweet": false,
+            "showRetweet": false,
         <?php } ?>
         <?php if ($showInteraction) { ?>
-        "showInteraction": true,
+            "showInteraction": true,
         <?php } else { ?>
-        "showInteraction": false,
+            "showInteraction": false,
         <?php } ?>
         <?php if ($showImages) { ?>
-        "showImages": true,
+            "showImages": true,
         <?php } else { ?>
-        "showImages": false,
+            "showImages": false,
         <?php } ?>
         <?php if ($linksInNewWindow) { ?>
-        "linksInNewWindow": true,
+            "linksInNewWindow": true,
         <?php } else { ?>
-        "linksInNewWindow": false,
+            "linksInNewWindow": false,
         <?php } ?>
     };
 
