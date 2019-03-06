@@ -2,7 +2,7 @@
 namespace Concrete\Package\CustomizableTwitterFeed\Block\CustomizableTwitterFeed;
 
 use Concrete\Core\Block\BlockController;
-use Core;
+use Concrete\Core\Support\Facade\Application;
 
 class Controller extends BlockController
 {
@@ -22,9 +22,15 @@ class Controller extends BlockController
         return t('Add a customizable Twitter feed on your pages.');
     }
 
+    public function registerViewAssets($outputContent = '')
+    {
+        $this->requireAsset('javascript', 'twitterFetcher');
+    }
+
     public function validate($args)
     {
-        $error = Core::make('helper/validation/error');
+        $app = Application::getFacadeApplication();
+        $error = $app->make('helper/validation/error');
         if (!trim($args['userName'])){
             $error->add(t('Please enter a valid username.'));
         }
