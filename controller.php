@@ -1,8 +1,9 @@
 <?php
 namespace Concrete\Package\CustomizableTwitterFeed;
 
-use Package;
-use BlockType;
+use Concrete\Core\Asset\AssetList;
+use Concrete\Core\Block\BlockType\BlockType;
+use Concrete\Core\Package\Package;
 
 /*
 Deluxe Customizable Twitter Feed by Karl Dilkington (aka MrKDilkington)
@@ -14,7 +15,7 @@ class Controller extends Package
 {
     protected $pkgHandle = 'customizable_twitter_feed';
     protected $appVersionRequired = '5.7.3';
-    protected $pkgVersion = '1.0.3';
+    protected $pkgVersion = '1.0.4';
 
     public function getPackageName()
     {
@@ -26,13 +27,25 @@ class Controller extends Package
         return t('Add a customizable Twitter feed on your pages.');
     }
 
+    public function on_start()
+    {
+        $assetList = AssetList::getInstance();
+        $assetList->register(
+            'javascript',
+            'twitterFetcher',
+            'blocks/customizable_twitter_feed/files/twitterFetcher_min.js',
+            array(),
+            'customizable_twitter_feed'
+        );
+    }
+
     public function install()
     {
-        $pkg = parent::install();
+        $packageInstall = parent::install();
 
-        $bt = BlockType::getByHandle('customizable_twitter_feed');
-        if (!is_object($bt)) {
-            BlockType::installBlockTypeFromPackage('customizable_twitter_feed', $pkg);
+        $blockType = BlockType::getByHandle('customizable_twitter_feed');
+        if (!is_object($blockType)) {
+            BlockType::installBlockTypeFromPackage('customizable_twitter_feed', $packageInstall);
         }
     }
 }
