@@ -30,6 +30,7 @@
 - set the reply, retweet, and favorites font size
 - set the @user name font size
 - set the link text color and hover color
+- display Font Awesome icons for reply, retweet, and favorite using the "Interaction Icons" block template
 
 **Browser Support:**
 - modern browsers
